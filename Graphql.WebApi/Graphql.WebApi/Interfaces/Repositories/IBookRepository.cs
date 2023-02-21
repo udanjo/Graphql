@@ -7,5 +7,7 @@ namespace Graphql.WebApi.Interfaces.Repositories
         Task Save(IEnumerable<Book> Models);
 
         Task<IEnumerable<Book>> GetAll();
+
+        Task<bool> Delete();
     }
 }

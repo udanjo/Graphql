@@ -47,8 +47,16 @@ namespace Graphql.WebApi.Repositories
 
         public async Task<bool> DeleteAsync(Expression<Func<T, bool>> filter)
         {
-            var resul = await _collection.DeleteOneAsync(filter);
-            return resul.DeletedCount > 0;
+            try
+            {
+                var document = filter != null ? _collection.DeleteOneAsync(filter) : _collection.DeleteManyAsync(new BsonDocument());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
         }
 
         public virtual async Task SaveRangeAsync(IEnumerable<T> documents)

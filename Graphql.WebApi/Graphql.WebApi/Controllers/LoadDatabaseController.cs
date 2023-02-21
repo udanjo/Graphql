@@ -23,5 +23,13 @@ namespace Graphql.WebApi.Controllers
 
             return Ok(true);
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete()
+        {
+            var result = await _bookRepository.Delete();
+
+            return Ok(result);
+        }
     }
 }

@@ -17,5 +17,8 @@ namespace Graphql.WebApi.Repositories
 
         public async Task<IEnumerable<Book>> GetAll()
             => await _repository.GetAsync(null);
+
+        public async Task<bool> Delete()
+            => await _repository.DeleteAsync(null);
     }
 }
