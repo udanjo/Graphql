@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Graphql.WebApi/.vs
+/Graphql.WebApi/Graphql.WebApi/bin/Debug/net6.0
+/Graphql.WebApi/Graphql.WebApi/obj
